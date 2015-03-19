@@ -1,14 +1,13 @@
 #pragma once
 #define _AFXDLL
 #include <afx.h>
-#include <regex>
 #include <string>
 
-class CCT1
+
+class CCT3
 {
 public:
-	CCT1();
-	virtual ~CCT1();
+	CCT3();
+	virtual ~CCT3();
 	void Rf();
 };
-

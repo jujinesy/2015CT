@@ -195,17 +195,17 @@ BOOL CCT5Dlg::LoadFile(LPTSTR lpFilename)
 {
 	hFile = CreateFile(lpFilename, GENERIC_READ, \
 		FILE_SHARE_READ, NULL, \
-		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);//根据文件名打开文件,得到文件句柄.
+		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 	if (!hFile)
 		return FALSE;
-	hFileMapping = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, 0, NULL);//创建映像文件
+	hFileMapping = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, 0, NULL);
 
 	if (!hFileMapping)
 	{
 		CloseHandle(hFile);
 		return FALSE;
 	}
-	ImageBase = MapViewOfFile(hFileMapping, FILE_MAP_READ, 0, 0, 0);//得到映像文件的基址,存放在全局变量ImageBase中.
+	ImageBase = MapViewOfFile(hFileMapping, FILE_MAP_READ, 0, 0, 0);
 	if (!ImageBase)
 	{
 		CloseHandle(hFile);
